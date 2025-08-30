@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH --job-name="c_process_reports"
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=abhi1@stanford.edu
+#SBATCH --output=c_process_reports.out
+#SBATCH --error=c_process_reports.err
+#SBATCH -t 0-12:00:00
+#SBATCH -p short
+#SBATCH -c 10
+#SBATCH --mem=16G
+
+python src/process_reports.py --split train --start_idx 1000 --end_idx 1500 --end_point craftmd
